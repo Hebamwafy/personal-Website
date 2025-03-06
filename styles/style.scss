@@ -1,0 +1,228 @@
+:root {
+  --color-white: #fff;
+  --color-grey: #c4c4c4;
+  --color-purple: #6a0dad;
+  --color-black: #000;
+  --color-dark: #333;
+  --color-lavender: #e6e6fa;
+  --color-babypink: #ffb6c1;
+  --color-lemon: #f6ef92;
+  --default-padding:1rem;
+  --default-radius:0.8rem;
+  --color-mintgreen: #80f080;
+  --color-olivegreen: #0a4a17;
+  --color-olivegreen-light: #004d1a;
+
+}
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.big-shoulders{
+  font-family: "Big Shoulders", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+a {
+  color: inherit;
+  display: inline-block;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Big Shoulders", sans-serif;
+  color: var(--color-olivegreen);
+}
+
+/* End Css reset */
+.container {
+  display: grid;
+  background: url(../media/css-pattern-by-magicpattern-6.png);
+  background-size: cover;
+  min-height: 100vh;
+  background-blend-mode: difference;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(0.08rem);
+  }
+  grid-template-columns: repeat(4, 20rem);
+  gap: var(--default-padding);
+  justify-content: center;
+  align-content: center;
+
+    @media (min-width: 600px) and (max-width: 900px) {
+        grid-template-columns: repeat(2, 1fr);
+        align-content: start;
+    }
+  
+    @media (max-width: 600px){
+      grid-template-columns: repeat(1, 1fr);
+      align-content: start;
+    }
+}
+h1{
+  color: var(--color-lemon);
+  padding: var(--default-padding);
+  margin-top: 0.5rem;
+  font-weight:bold;
+}
+.card{
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  background-color: var(--color-mintgreen);
+  border-radius: var(--default-radius);
+  & .top{
+    background-color: var(--color-olivegreen-light);
+    padding: var(--default-padding);
+
+    @media (min-width: 600px) and (max-width: 900px){
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex: 1;
+    }
+     @media (max-width: 600px){
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex: 1;
+    }
+  }
+  &:nth-child(1){
+    grid-row: 1/3;
+    @media (min-width: 600px) and (max-width: 900px){
+      grid-column:1/3;
+      flex-direction: row;/* to make the 2 parts next to each other*/
+      border-radius: 0%;
+    }
+
+    @media (max-width: 600px){
+      border-radius: 0%;
+    }
+  }
+
+  &:not(:nth-child(1)){
+    padding: var(--default-padding);
+    width: 200px;
+    height: 150px;
+
+    @media (max-width: 900px){
+      width: auto;
+      margin: 0 var(--default-padding) ;
+    }
+  }
+  overflow: hidden;
+  margin: auto 0;
+}
+.pic {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: 0.2rem solid var(--color-lemon);
+}/*# sourceMappingURL=style.css.map */
+
+.bottom{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  padding: var(--default-padding);
+  margin-top: 3rem;
+  margin-bottom:3rem;
+
+  @media (min-width: 600px) and (max-width: 900px) {
+      flex: 1;
+  }
+  @media (max-width: 600px){
+    flex: 1;
+    flex-wrap:wrap ;
+    flex-direction: row;
+  }
+
+}
+.icon{
+  width: 2rem;
+  height: 2rem;
+  
+}
+.icons{
+  display: flex;
+  gap: 0.5rem;
+}
+
+.row{
+display: flex;
+flex: 1;
+gap: 0.5rem;
+align-items: center;
+}
+
+.username{
+  font-weight: 600;
+  color: var(--color-olivegreen);
+}
+.type{
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.title{
+  font-weight: 900;
+  color: var(--color-olivegreen);
+}
+.stack{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top:var(--default-padding);
+  
+}
+.stack-title{
+  font-weight: 500;
+  color: var(--color-olivegreen);
+}
+.languages{
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.language{
+  display: inline-block;
+  background-color: var(--color-lemon);
+  padding: 0.2rem 0.5rem;
+  border-radius:calc( var(--default-radius)/3);
+  color: var(--color-olivegreen);
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
